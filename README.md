@@ -1,10 +1,11 @@
 # A Semantically Constrained Concept Bottleneck Model for Interpretable Text Classification: HiCIN
 
-**HiCIN** is a framework for interpretable text classification that uses a hierarchical concept bottleneck to explain model decisions through human-understandable concepts.
+This paper introduces **HICIN**, a CBM framework that incorporates hierarchical concept modeling and semantically constrained training for interpretable text classification. Specifically, HICIN constructs a hierarchical concept space that integrates data-specific concrete concepts with high-level abstract concepts. This design enables structured reasoning from fine-grained textual evidence to more general semantic representations. To support efficient and reliable concept annotation, HICIN adopts a two-stage strategy that combines lexical-based initialization with semantic refinement using a Natural Language Inference model. Furthermore, HICIN introduces a hierarchical label predictor jointly optimized with classification and semantic alignment objectives, explicitly enforcing concept-based reasoning while mitigating information leakage. Extensive experiments on five benchmark datasets across multiple backbone models show that HICIN consistently outperforms state-of-the-art CBM baselines while requiring fewer concepts. On average, HICIN improves classification performance by up to 103% compared to the baselines.
 
+Paper: .....
 ---
 
-## 🧩 Core Components
+## 🧩 Architecture & Core Components
 
 *   **Hierarchical Concept Space:** Uses both **concrete concepts** (specific words) and **abstract concepts** (high-level semantic clusters).
 *   **Two-Stage Annotation:** Combines **lexical matching** with **Natural Language Inference (NLI)** to refine concept scores based on meaning rather than just keywords.
