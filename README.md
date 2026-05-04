@@ -5,15 +5,15 @@ This paper introduces **HICIN**, a CBM framework that incorporates hierarchical 
 Paper: .....
 ---
 
-## 🧩 Architecture & Core Components
-
+## Architecture & Core Components
+![HiCIN Architecture](approach_overview.png)
 *   **Hierarchical Concept Space:** Uses both **concrete concepts** (specific words) and **abstract concepts** (high-level semantic clusters).
 *   **Two-Stage Annotation:** Combines **lexical matching** with **Natural Language Inference (NLI)** to refine concept scores based on meaning rather than just keywords.
 *   **Semantic-Constrained Training:** Implements a dual-loss function to ensure the model's internal concepts align with their actual semantic definitions.
 
 ---
 
-## ⚙️ Installation
+## Installation
 
 ### Setup
 ```bash
