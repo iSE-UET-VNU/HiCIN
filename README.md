@@ -1,0 +1,85 @@
+# A Semantically Constrained Concept Bottleneck Model for Interpretable Text Classification: HiCIN
+
+**HiCIN** is a framework for interpretable text classification that uses a hierarchical concept bottleneck to explain model decisions through human-understandable concepts.
+
+---
+
+## 🧩 Core Components
+
+*   **Hierarchical Concept Space:** Uses both **concrete concepts** (specific words) and **abstract concepts** (high-level semantic clusters).
+*   **Two-Stage Annotation:** Combines **lexical matching** with **Natural Language Inference (NLI)** to refine concept scores based on meaning rather than just keywords.
+*   **Semantic-Constrained Training:** Implements a dual-loss function to ensure the model's internal concepts align with their actual semantic definitions.
+
+---
+
+## ⚙️ Installation
+
+### Setup
+```bash
+# Clone the repository
+git clone https://github.com/your-username/HiCIN.git
+cd HiCIN
+
+# Prepare environment
+python3 -m venv venv
+source venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+```
+
+---
+
+## 🛠️ Dataset Configuration
+
+Before running the pipeline, update your configuration in `configs/dataset_configs.json`. This file defines the data paths, label mappings, and task descriptions required for both concept discovery and training.
+
+**Example `configs/dataset_configs.json`:**
+```json
+{
+    "data_name": "ecommerce_sampled",
+    "train_data_path": "data/ecommerce_sampled/train.csv",
+    "test_data_path": "data/ecommerce_sampled/test.csv",
+    "label_column": "label",
+    "text_column": "text",
+    "label_mapping": {
+        "Books": "Books",
+        "Clothing & Accessories": "Clothing and Accessories",
+        "Household": "Household",
+        "Electronics": "Electronics"
+    },
+    "label_descriptions": {
+        "Books": "Texts related to books, novels, literature, or any written publications.",
+        "Clothing & Accessories": "Texts describing apparel, fashion items, shoes, or accessories.",
+        "Household": "Texts referring to home goods, kitchen items, cleaning supplies, or domestic products.",
+        "Electronics": "Texts about electronic devices, gadgets, appliances, or tech-related items."
+    },
+    "topic": "ecommerce product classification from text descriptions",
+    "task_description": "Classifying product descriptions into correct ecommerce product categories based on textual content and context."
+}
+```
+
+---
+
+## 🚀 Usage
+
+The pipeline consists of three main steps:
+
+### 1. Concept Discovery
+```bash
+python3 -m src.concepts_generation
+```
+
+### 2. Concept Annotation
+Generate the concept-label matrix using an NLI model.
+```bash
+python3 -m src.concepts_annotation
+```
+
+### 3. Model Training
+Train the classifier with semantic constraints for high interpretability.
+```bash
+python3 -m src.hicin_training
+```
+
+---
