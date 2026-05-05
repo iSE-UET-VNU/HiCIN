@@ -31,7 +31,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🛠️ Dataset Configuration
+## Dataset Configuration
 
 Before running the pipeline, update your configuration in `configs/dataset_configs.json`. This file defines the data paths, label mappings, and task descriptions required for both concept discovery and training.
 
@@ -62,7 +62,7 @@ Before running the pipeline, update your configuration in `configs/dataset_confi
 
 ---
 
-## 🚀 Usage
+## Usage
 
 The pipeline consists of three main steps:
 
